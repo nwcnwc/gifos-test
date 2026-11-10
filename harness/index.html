@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GifOS test harness</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 16px/1.45 system-ui, sans-serif; }
+  header, main { max-width: 920px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
+  h1 { font-size: 1.5rem; margin: 0 0 .3rem; }
+  p { margin: .4rem 0; }
+  .row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .8rem 0; }
+  button { font: inherit; padding: .45rem .8rem; cursor: pointer; }
+  .counts { font-variant-numeric: tabular-nums; }
+  .fail { color: #a32020; }
+  .pass { color: #0b6b2f; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; vertical-align: top; padding: .35rem .4rem; border-top: 1px solid #ccc; }
+  code, pre { font: 13px/1.4 ui-monospace, monospace; }
+  pre { white-space: pre-wrap; padding: .7rem; background: #111; color: #eee; border-radius: 6px; }
+  #status { min-height: 1.4em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GifOS test harness</h1>
+  <p>Runs atomic checks against the live site <a href="https://gifos.app">https://gifos.app</a>. People do not have to watch. An agent can press Run, or call <code>gifosHarness.run()</code> from the console on this page.</p>
+  <div class="row">
+    <button type="button" id="run">Run</button>
+    <button type="button" id="save" disabled>Download report</button>
+    <label><input type="checkbox" id="fails-only"> Failures only</label>
+    <span class="counts" id="counts"></span>
+  </div>
+  <p id="status"></p>
+</header>
+<main>
+  <table>
+    <thead><tr><th>Result</th><th>Suite</th><th>Check</th><th>Detail</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <h2>Drive it from a real browser</h2>
+  <p>Open this page, or inject <code>harness/suite.js</code> into a tab that is already on gifos.app. Injection adds DOM checks for the Home Screen or the meeting page you are on. The fetch checks run either way.</p>
+  <pre>await page.goto('https://gifos.app/run');
+await page.addScriptTag({ path: 'harness/suite.js' });
+const report = await page.evaluate(() => gifosHarness.run());
+// report.summary is { total, pass, fail, blocked }
+// report.tests is one row per check: { id, suite, name, ok, detail }</pre>
+  <p>A meeting debug log for a person is not this page. In the meeting, open <strong>More → Settings</strong> and use the debug switch and the download in that dialog. <code>export-meet-debug.js</code> is an optional console helper for an agent, not the human path.</p>
+</main>
+<script src="suite.js"></script>
+<script>
+(function () {
+  var report = null;
+  var runBtn = document.getElementById('run');
+  var saveBtn = document.getElementById('save');
+  var failsOnly = document.getElementById('fails-only');
+  var rows = document.getElementById('rows');
+  var counts = document.getElementById('counts');
+  var status = document.getElementById('status');
+
+  function paint() {
+    if (!report) return;
+    var s = report.summary;
+    counts.innerHTML = '<span class="pass">' + s.pass + ' pass</span> · <span class="fail">' + s.fail + ' fail</span> · ' + s.total + ' total';
+    rows.textContent = '';
+    report.tests.forEach(function (t) {
+      if (failsOnly.checked && t.ok) return;
+      var tr = document.createElement('tr');
+      [t.ok ? 'pass' : 'fail', t.suite, t.name, t.detail || ''].forEach(function (cell, i) {
+        var td = document.createElement('td');
+        td.textContent = cell;
+        if (i === 0) td.className = t.ok ? 'pass' : 'fail';
+        tr.appendChild(td);
+      });
+      rows.appendChild(tr);
+    });
+  }
+
+  failsOnly.onchange = paint;
+  runBtn.onclick = function () {
+    runBtn.disabled = true;
+    status.textContent = 'Running against https://gifos.app …';
+    gifosHarness.run({
+      onProgress: function (p) { status.textContent = 'Running against https://gifos.app … ' + p.phase + ' (' + p.done + ' checks so far)'; }
+    }).then(function (out) {
+      report = out;
+      saveBtn.disabled = false;
+      runBtn.disabled = false;
+      status.textContent = 'Finished ' + out.finished + '.';
+      paint();
+    }).catch(function (e) {
+      runBtn.disabled = false;
+      status.textContent = e && e.message ? e.message : String(e);
+    });
+  };
+  saveBtn.onclick = function () {
+    if (!report) return;
+    var blob = new Blob([JSON.stringify(report, null, 2) + '\n'], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'gifos-harness-report.json';
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+  };
+})();
+</script>
+</body>
+</html>

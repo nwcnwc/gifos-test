@@ -8,9 +8,15 @@ The site under test is **https://gifos.app**. Assignments describe only controls
 
 Friends of the project, and agents working for them. You need a browser, a GitHub account if you will open a pull request, and whatever extra devices the assignment asks for. You do not need anyone's internal machines, a WebDriver setup, or a release script. Testers never cut a release.
 
+## Run the harness
+
+Open [`harness/index.html`](harness/index.html) and press **Run**. The page checks the live site: the store catalog and each app's published GIF, the meeting page (including the published release), the Home Screen menu, About, the store page, browser support, and `version.json`. It downloads `gifos-harness-report.json`. An agent can call `gifosHarness.run()` on that page, or inject `harness/suite.js` into a browser that is already on https://gifos.app. Watching the run is optional. Details are in [`harness/README.md`](harness/README.md).
+
+The files in [`assignments/`](assignments/README.md) are the same themes, written so a person can see what each suite is about. The atomic checks live in the harness.
+
 ## Pick an assignment
 
-Assignments live in [`assignments/`](assignments/README.md). Each file is self-contained. Start with one that matches the devices you have:
+Assignments live in [`assignments/`](assignments/README.md). Each file is a suite description. Start with one that matches the devices you have:
 
 - One browser: create a meeting, store browse, help pages, Home Screen, a single store app.
 - Two browsers or a browser and a phone: join, audio and video, leave and rejoin, screen share, views.
@@ -20,11 +26,10 @@ Store app names and slugs are the live catalog, copied into [`assignments/store-
 
 ## Run it
 
-1. Read the assignment.
-2. Do the steps on https://gifos.app.
-3. Copy [`templates/REPORT.md`](templates/REPORT.md) into a new folder and fill it in.
-4. Save the log next to the report. Meet, Cast, town hall, and join assignments use the Meet debug export in [`harness/`](harness/README.md). Other assignments use a plain `log.txt`.
-5. Check the folder:
+1. Run the harness, or read one assignment and follow it on https://gifos.app.
+2. Copy [`templates/REPORT.md`](templates/REPORT.md) into a new folder and fill it in.
+3. Save `gifos-harness-report.json` next to the report. For a meeting you joined by hand, also keep the debug download from **More → Settings** (the debug switch, then the download in that dialog). Other hand-written notes can be `log.txt`.
+4. Check the folder:
 
 ```bash
 node harness/validate-report.js path/to/your-report-folder
@@ -71,7 +76,7 @@ The debug-log script redacts addresses, room links, and password-like fields bef
 | --- | --- |
 | `assignments/` | One markdown file per test, plus the store catalog |
 | `templates/` | The report, and how the debug log is attached |
-| `harness/` | The Meet debug export, the report checker, and a checklist |
+| `harness/` | The web harness (`index.html`), the checker, and a checklist |
 | `results/` | Where results pull requests add a dated folder. Empty until then |
 
 The checker has its own fixture test: `node harness/validate-report.js --self-test`.

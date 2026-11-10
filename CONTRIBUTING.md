@@ -6,10 +6,9 @@ You can test without an account. You need a GitHub account only if you open a pu
 
 ## Run a test
 
-1. Pick a file in [`assignments/`](assignments/README.md).
-2. Follow it on https://gifos.app. Use the published release a normal visit opens, and write down the build label in the bottom-left corner.
-3. Copy [`templates/REPORT.md`](templates/REPORT.md) and fill in every section. Under Result, write `pass`, `fail`, or `blocked`.
-4. Attach the log described in [`templates/DEBUG-LOG.md`](templates/DEBUG-LOG.md).
+1. Open [`harness/index.html`](harness/index.html) and press Run, or follow one file in [`assignments/`](assignments/README.md) on https://gifos.app. Use the published release a normal visit opens, and write down the build label in the bottom-left corner.
+2. Copy [`templates/REPORT.md`](templates/REPORT.md) and fill in every section. Under Result, write `pass`, `fail`, or `blocked`.
+3. Attach `gifos-harness-report.json` from the harness. If you were in a meeting, also attach the debug download from **More → Settings** (the debug switch, then the download). See [`templates/DEBUG-LOG.md`](templates/DEBUG-LOG.md).
 5. From a checkout of this repo, run:
 
 ```bash

@@ -13,7 +13,8 @@
 - Do not put a live meeting, broadcast, or invite link in the report. Leave the room when you finish.
 - Do not put passwords, payment details, or network addresses in the report.
 - Copy `templates/REPORT.md`, keep its headings, and set the id below. Result is `pass`, `fail`, or `blocked`.
-- Meet, Cast, town hall, and join runs: while the room is up, paste `harness/export-meet-debug.js` into that page's DevTools console and save `meet-debug.ndjson` next to the report. See `harness/README.md`.
+- The pass/fail record is the harness: open `harness/index.html` and press Run, or have an agent call `gifosHarness.run()` in a browser on https://gifos.app. Save `gifos-harness-report.json` with the report.
+- A meeting debug log, when this suite needs one, comes from the product: More → Settings, turn on the debug switch, then use the download in that dialog. Do not invent an Export button. `harness/export-meet-debug.js` is only an optional console helper.
 - Other runs: write `log.txt` (what you opened and what the screen said).
 - Check with `node harness/validate-report.js <folder>` before you email info@crowdconceptsinc.com or open a results pull request. A bug you can fix belongs on nwcnwc/gifos-app or nwcnwc/gifos-apps-source, described in `AGENTS.md`.
 
@@ -24,7 +25,7 @@
 2. Choose **Play a friend**. Then press **Invite** in the bar above the app. The product builds a link shaped like `https://gifos.app/join/…`. Copy it. Do not put the real link in the report. Write down the choices the Invite sheet actually offers (how long the link works, and what happens if you disconnect). Record the labels you see.
 3. Seat B opens the link. B should enter the same checkers game, not a blank Home Screen and not a video meeting.
 4. A moves a piece. B should see that move. B moves. A should see it.
-5. This session runs on the meeting page's app room, so `window.__gifosVideo` is available. Start the debug export on A, let it take a few samples, and stop it.
+5. On A, open More → Settings, turn on the debug switch, and download the log.
 6. A presses the header control that ends sharing (wording may be **Stop** or the invite sheet's revoke / new link). Record the label. B should stop receiving new moves after that, or should be told the session ended. Write which.
 
 ## Expected

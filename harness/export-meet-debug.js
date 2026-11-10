@@ -1,10 +1,10 @@
 /*
- * export-meet-debug.js — save a GifOS Meet debug log from the live page.
+ * export-meet-debug.js — optional agent helper, not the human debug log.
  *
- * There is no "Export debug log" item in the Meet controls. The meeting page
- * (https://gifos.app/meet/…, https://gifos.app/cast/…, or run.html) keeps a
- * read-only diagnostic object on window.__gifosVideo. This file samples that
- * object and downloads newline-delimited JSON.
+ * People download the debug log from the meeting itself: More → Settings,
+ * the debug switch, then the download in that dialog. This file is only for
+ * an agent that already has the meeting page console open and wants a
+ * newline-delimited sample of window.__gifosVideo.
  *
  * On the meeting page, open DevTools (F12 or Option-Command-I), open the
  * Console, paste this whole file, and press Enter. It samples for 60 seconds,

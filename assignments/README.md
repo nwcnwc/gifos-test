@@ -1,6 +1,6 @@
 # Assignments
 
-Each file stands alone. Run it on https://gifos.app. Send the report as described in the repository README.
+These files describe the suites. The atomic checks run in [`harness/index.html`](../harness/index.html) against https://gifos.app. A meeting debug log is the debug switch and download in **More → Settings**.
 
 | Id | File | What it covers | Seats |
 | --- | --- | --- | --- |

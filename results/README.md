@@ -22,8 +22,9 @@ Required:
 
 One log, matching the assignment:
 
-- `meet-debug.ndjson` or `meet-debug.ndjson.gz` for Meet, Cast, town hall, and join
-- `log.txt` for Home Screen, store, help, and payments
+- `gifos-harness-report.json` from `harness/index.html` (the usual machine-readable result)
+- `meet-debug.ndjson` or `meet-debug.ndjson.gz` when the file is the Settings debug download from a meeting
+- `log.txt` for a hand-written Home Screen, store, help, or payments note
 
 A `blocked` run may contain only `REPORT.md`.
 

@@ -16,8 +16,9 @@ Work from the assignment file and the live site. Do not invent screens, view nam
 - Stay on that build. The unreleased root build is a different product surface. Switch only when you are comparing a bug, and write that in the report. Do not publish or pin anything for other people.
 - Two seats can be two browsers on one computer (one of them a private window) when the assignment says a second person. Use display names `A` and `B`.
 - Allow the camera and microphone only when the assignment asks. Join stays muted with the camera off until you turn them on. That is the lobby text.
-- When the assignment uses Meet, Cast, town hall, or an app invite, paste `harness/export-meet-debug.js` into the DevTools console of the meeting page while the room is up. See `harness/README.md`. Save `meet-debug.ndjson` (or `.ndjson.gz`) beside the report.
-- For Home Screen, store, help, and payments assignments, write `log.txt` of at least a few hundred characters: pages opened, labels you saw, and anything that disagreed with the assignment.
+- Run the harness. Open `harness/index.html` and press Run, or inject `harness/suite.js` into a browser on https://gifos.app and evaluate `gifosHarness.run()`. Playwright, Puppeteer, and `page.evaluate` are all fine. Save the returned object as `gifos-harness-report.json`.
+- A debug log from a meeting you actually joined is the product control: **More → Settings**, the debug switch, then the download in that dialog. Do not invent an Export button. `harness/export-meet-debug.js` is optional and only for a console that is already on that meeting page.
+- For a hand-written Home Screen, store, help, or payments note, `log.txt` of at least a few hundred characters is still accepted when you are not attaching the harness report.
 - Fill `templates/REPORT.md`. Keep the headings. Set `- Id: \`the-id\``. Under `## Result`, put `pass`, `fail`, or `blocked` on its own line.
 - Run `node harness/validate-report.js <folder>` and fix what it reports. Also walk `harness/CHECKLIST.md`.
 

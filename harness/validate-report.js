@@ -129,6 +129,41 @@ function privacyHits(text) {
   return hits;
 }
 
+function validateHarnessReport(file) {
+  var errors = [];
+  var raw;
+  try { raw = fs.readFileSync(file, 'utf8'); }
+  catch (e) { return ['could not read gifos-harness-report.json']; }
+  if (raw.indexOf('\0') !== -1) errors.push('gifos-harness-report.json contains NUL bytes');
+  privacyHits(raw).forEach(function (e) { errors.push('gifos-harness-report.json: ' + e); });
+  var report;
+  try { report = JSON.parse(raw); }
+  catch (e) { return errors.concat(['gifos-harness-report.json is not JSON']); }
+  if (!report || report.product !== 'gifos-test-harness') errors.push('gifos-harness-report.json product is not gifos-test-harness');
+  if (!report || String(report.target || '').indexOf('gifos.app') === -1) errors.push('gifos-harness-report.json target is not gifos.app');
+  var tests = report && Array.isArray(report.tests) ? report.tests : null;
+  var summary = report && report.summary ? report.summary : null;
+  if (!tests || !summary) return errors.concat(['gifos-harness-report.json needs summary and tests']);
+  if (summary.total !== tests.length) errors.push('gifos-harness-report.json summary.total does not match tests.length');
+  var passN = 0, failN = 0, storeN = 0, meetN = 0;
+  tests.forEach(function (t) {
+    if (!t || typeof t.id !== 'string' || typeof t.suite !== 'string' || typeof t.ok !== 'boolean' || typeof t.name !== 'string') {
+      errors.push('gifos-harness-report.json has a test row missing id, suite, name, or ok');
+      return;
+    }
+    if (t.ok) passN++; else failN++;
+    if (t.suite === 'store-catalog' || t.suite === 'store-gif') storeN++;
+    if (t.suite.indexOf('meet') === 0) meetN++;
+  });
+  if ((summary.pass || 0) + (summary.fail || 0) + (summary.blocked || 0) !== summary.total) {
+    errors.push('gifos-harness-report.json pass/fail/blocked do not add up');
+  }
+  if (summary.pass !== passN || summary.fail !== failN) errors.push('gifos-harness-report.json summary counts do not match the rows');
+  if (storeN < 150) errors.push('gifos-harness-report.json does not cover the store catalog');
+  if (meetN < 20) errors.push('gifos-harness-report.json does not cover Meet');
+  return errors;
+}
+
 function validateDir(dir) {
   var errors = [];
   var warnings = [];
@@ -167,11 +202,14 @@ function validateDir(dir) {
   var names = fs.readdirSync(dir);
   var meetLogs = names.filter(function (n) { return /^(meet-debug|debug)\.ndjson(\.gz)?$/.test(n); });
   var plain = names.indexOf('log.txt') !== -1;
+  var harnessReport = names.indexOf('gifos-harness-report.json') !== -1;
   var blocked = result === 'blocked';
-  if (id && needsMeetLog(id) && !blocked) {
-    if (!meetLogs.length) errors.push('this assignment needs meet-debug.ndjson or meet-debug.ndjson.gz');
+  if (harnessReport) {
+    validateHarnessReport(path.join(dir, 'gifos-harness-report.json')).forEach(function (e) { errors.push(e); });
+  } else if (id && needsMeetLog(id) && !blocked) {
+    if (!meetLogs.length) errors.push('this assignment needs the Settings debug download (meet-debug.ndjson or meet-debug.ndjson.gz) or gifos-harness-report.json');
   } else if (!blocked && !meetLogs.length && !plain) {
-    errors.push('need meet-debug.ndjson or log.txt');
+    errors.push('need a Settings debug download, log.txt, or gifos-harness-report.json');
   }
   meetLogs.forEach(function (name) {
     var loaded = readMaybeGzip(path.join(dir, name));
@@ -307,6 +345,27 @@ function selfTest() {
   fs.mkdirSync(blockedDir);
   writeFile(blockedDir, 'REPORT.md', goodReport('meet-larger-room').replace('\npass\n', '\nblocked\n'));
   check('blocked without log', blockedDir, true);
+
+  function harnessFixture(ok) {
+    var tests = [];
+    var i;
+    for (i = 0; i < 160; i++) tests.push({ id: 'store-app-' + i + '-identity', suite: 'store-catalog', name: 'app ' + i, ok: true, detail: '' });
+    for (i = 0; i < 25; i++) tests.push({ id: 'meet-lobby-' + i, suite: 'meet', name: 'meet ' + i, ok: ok, detail: ok ? '' : 'missing' });
+    var passN = tests.filter(function (t) { return t.ok; }).length;
+    return {
+      product: 'gifos-test-harness',
+      target: 'https://gifos.app',
+      started: '2026-11-09T00:00:00.000Z',
+      finished: '2026-11-09T00:01:00.000Z',
+      summary: { total: tests.length, pass: passN, fail: tests.length - passN, blocked: 0 },
+      tests: tests
+    };
+  }
+  var harnessDir = path.join(tmp, 'harness');
+  fs.mkdirSync(harnessDir);
+  writeFile(harnessDir, 'REPORT.md', goodReport('meet-create-join'));
+  writeFile(harnessDir, 'gifos-harness-report.json', JSON.stringify(harnessFixture(true)));
+  check('harness report', harnessDir, true);
 
   var emptyDir = path.join(tmp, 'empty');
   fs.mkdirSync(emptyDir);

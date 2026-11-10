@@ -13,7 +13,8 @@
 - Do not put a live meeting, broadcast, or invite link in the report. Leave the room when you finish.
 - Do not put passwords, payment details, or network addresses in the report.
 - Copy `templates/REPORT.md`, keep its headings, and set the id below. Result is `pass`, `fail`, or `blocked`.
-- Meet, Cast, town hall, and join runs: while the room is up, paste `harness/export-meet-debug.js` into that page's DevTools console and save `meet-debug.ndjson` next to the report. See `harness/README.md`.
+- The pass/fail record is the harness: open `harness/index.html` and press Run, or have an agent call `gifosHarness.run()` in a browser on https://gifos.app. Save `gifos-harness-report.json` with the report.
+- A meeting debug log, when this suite needs one, comes from the product: More → Settings, turn on the debug switch, then use the download in that dialog. Do not invent an Export button. `harness/export-meet-debug.js` is only an optional console helper.
 - Other runs: write `log.txt` (what you opened and what the screen said).
 - Check with `node harness/validate-report.js <folder>` before you email info@crowdconceptsinc.com or open a results pull request. A bug you can fix belongs on nwcnwc/gifos-app or nwcnwc/gifos-apps-source, described in `AGENTS.md`.
 
@@ -22,7 +23,7 @@
 
 Do not look for a view called Speaker, Gallery, or Grid in a menu. Those names are not on the live controls. The gallery control is the **▦ Fit** / **▦ Scroll** button. The stage is the **Stage** button. Help calls the rest of the room **Row** and **the stadium**.
 
-1. A starts a call, B joins. Start the debug export on A. If you have a third seat, join them too.
+1. A starts a call, B joins. On A, turn on the Settings debug switch and download the log. If you have a third seat, join them too.
 2. Find **▦ Fit** (top corner; the accessible name starts as Gallery). Its tooltip is about fitting everyone on one screen, and pressing it to scroll. Press it. The label should become **▦ Scroll**. Scroll the room. Press again and confirm it returns to **▦ Fit**. Shortcut **Alt+F** is listed on the button; try it once and record whether it toggles the same way.
 3. Open **More → Room → Stage**. The title tooltip is about stepping onto the stage so the room sees and hears the stage first. Step on. B should see A on the stage. Step off. The stage should clear.
 4. Open **More → Your video**. Under **You**, press **Tile**, then **Float**, then **Strip**, then **Hide**.
@@ -34,7 +35,7 @@ Do not look for a view called Speaker, Gallery, or Grid in a menu. Those names a
 6. Press **Full screen** in the header (the F control) if it is shown, then leave full screen. If the browser has no full screen (some phones), write "Full screen not offered".
 7. Under Your video, if **Float** (picture-in-picture, "Float the meeting") is shown, press it and confirm a small window, then close it. If it is hidden, write "Float the meeting not shown". That follows the browser, not a missing assignment step.
 8. Open **Help** and check the room section against what you saw: Stage, Row, the stadium. Close it.
-9. Stop the debug export. Leave.
+9. Leave the debug download in the report folder, then leave.
 
 ## Expected
 

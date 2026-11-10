@@ -1,56 +1,41 @@
 # Harness
 
-Small tools for a person or an agent on their own computer. Nothing here talks to a private lab, a WebDriver grid, or a remote machine.
-
-| File | What it does |
-| --- | --- |
-| `export-meet-debug.js` | Paste into the Meet page console. Downloads `meet-debug.ndjson` |
-| `validate-report.js` | Checks a report folder |
-| `CHECKLIST.md` | The list to walk before you send a result |
-
-Checker fixture (no browser):
+Open [`index.html`](index.html) and press **Run**. The page loads [`suite.js`](suite.js) and checks the live site at https://gifos.app. Nobody has to watch. The result is `gifos-harness-report.json` (also returned by `gifosHarness.run()`).
 
 ```bash
 node harness/validate-report.js --self-test
 ```
 
-Check a folder you are about to send:
+A browser on this page is enough for the fetch checks. If a browser blocks `file://` fetches, serve this folder (`python3 -m http.server`) and open `http://127.0.0.1:8000/harness/`.
 
-```bash
-node harness/validate-report.js results/2026-11-09-meet-create-join-octocat
+## What an agent runs
+
+From any page that can fetch gifos.app, including this harness:
+
+```js
+const report = await gifosHarness.run();
 ```
 
-Node.js is enough. There is no package install.
+From a real browser already on the live site (Playwright, Puppeteer, Chrome DevTools, `page.evaluate`):
 
-## Export the Meet debug log
+```js
+await page.goto('https://gifos.app/run');
+await page.addScriptTag({ path: 'harness/suite.js' });
+const report = await page.evaluate(() => gifosHarness.run());
+```
 
-GifOS Meet's debug export is the `window.__gifosVideo` object on the live meeting page, not a menu item. `debugDump()`, `pairs()`, `monInfo()`, `stageInfo()`, `screenInfo()`, `grid()`, and `statusPlane()` are the read-only fields this script records. Confirmed against the Meet page served at https://gifos.app (`run.html` in [nwcnwc/gifos-app](https://github.com/nwcnwc/gifos-app)).
+Injection adds DOM checks for the Home Screen or the meeting page in that tab. The same fetch checks still run. `report.summary` is `{ total, pass, fail, blocked }`. `report.tests` is one row per check: `{ id, suite, name, ok, detail }`.
 
-1. Join or start the room so the call controls are on screen.
-2. Open DevTools and select the Console.
-3. Paste the entire contents of `export-meet-debug.js` and press Enter.
-4. Leave it running while you do the assignment steps. It samples every 2 seconds for 60 seconds.
-5. To stop early: `gifosExportDebug.stop()`. To capture longer: `gifosExportDebug({ seconds: 180 })`.
-6. The browser downloads `meet-debug.ndjson`. If the text is over about 1.5 million characters it downloads `meet-debug.ndjson.gz` instead.
-7. Move that file into the report folder. Leave the room.
+The checks are the assignment themes, split into assertions that read the live catalog, the published GIF for each store app (size and type), the meeting page (lobby, dock, Fit, Stage, Run app, chat, record, town hall, stream), the Home Screen menu script, About, the store page, browser support, and `version.json`. A missing control fails. The suite does not click through a meeting and does not invent a view or an app.
 
-If the console says `window.__gifosVideo is not on this page`, you pasted it into the Home Screen or the store. Switch to the meeting tab and paste it there.
+## Debug log
 
-The file starts with a `kind: "meta"` line (`product` `gifos-meet`, `exporter` `gifos-test/export-meet-debug`) and then `kind: "sample"` lines whose `debugDump.me` is the local seat. That shape is what the checker requires, so a renamed text file full of notes will not pass a Meet assignment.
+In a meeting, open **More → Settings** (under Settings and help). Turn on the debug switch in that dialog, then use the download there. Save that file with the report. Do not look for a separate Export button.
 
-Addresses, `/meet/`, `/cast/`, and `/join/` codes, and object fields whose names look like passwords are removed before the download. Display names you typed are kept, so type `A` and `B`.
+`meet-settings-debug-download` (and the same check on the published release) fails when that dialog, as served, does not contain both the switch and a download.
 
-### More console detail
+[`export-meet-debug.js`](export-meet-debug.js) is optional. An agent that already has the meeting console open can paste it to sample `window.__gifosVideo`. It is not the human path.
 
-Before you enter the room, you can add `debug=on` to the address, for example a hash or query `debug=on`. The page remembers it for the tab and prints `[clog]` lines. The exporter copies those lines into the ndjson while it is running. You do not need this for a normal pass. Use it when a seat fails to connect and the report is a fail.
+## Checker
 
-## What the checker enforces
-
-- `REPORT.md` has the headings from the template, a real assignment id, and `pass`, `fail`, or `blocked`.
-- Placeholders such as `YOUR-HANDLE` and `Write what you saw here.` are gone.
-- Meet, Cast, town hall, and join ids need `meet-debug.ndjson` or `meet-debug.ndjson.gz` of at least 800 bytes, two or more JSON lines, a meta line from this exporter, and a sample with `debugDump.me`.
-- Other ids need that ndjson file or a `log.txt` of at least 400 characters.
-- `blocked` may omit the log.
-- An id `store-app-<slug>` must use a slug listed in `assignments/store-catalog.md`.
-- The report and the log must not contain an IP address, a live room link, or an unexpected email address. `info@crowdconceptsinc.com` and `support@gifos.app` are allowed.
-- Recordings and key files in the folder are rejected.
+`validate-report.js` accepts a report folder that contains `REPORT.md` and `gifos-harness-report.json` from a full run (store catalog rows and Meet rows). A Settings debug download named `meet-debug.ndjson` or `meet-debug.ndjson.gz` still satisfies a meeting assignment when you are not attaching the harness report. `log.txt` still satisfies Home Screen, store, help, and payments notes.
