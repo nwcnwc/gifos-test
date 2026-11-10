@@ -1,0 +1,215 @@
+# Store catalog
+
+Real App Store apps from the public catalog at https://gifos.app/apps/index.json.
+Catalog `1.0`, 206 apps, categories: Games, Learning, Productivity, Creativity, Media, Social, Utilities, Developer, Health.
+
+An assignment id `store-app-<slug>` has to use one of the slugs below. Do not invent apps. Author names are omitted here on purpose; the store page shows credits.
+
+Smoke tests that already have their own steps: `2048`, `chess-grandmaster`, `excalidraw`, `monkeytype`, `qr-code`, `solitaire`, `meeting-bot`. Everything else uses `assignments/store-app-any.md`.
+
+- `2048` — **2048** · Games · v1.2. Race a friend to 2048 — and come back to the board you left.
+- `a-dark-room` — **A Dark Room** · Games · v1.4.0. The fire lives in the file. Close the tab — still stoking. Invite someone to the same fire.
+- `aim-and-shoot` — **Aim and Shoot** · Games · v1.2.1. You aim. The robots learn. One arena, with your friends.
+- `air-hockey` — **Air Hockey** · Games · v1.0.0. Two paddles on the ice. Drag yours. A friend takes the other end.
+- `algorithm-visualizer` — **Algorithm Visualizer** · Learning, Developer · v1.0.0. Watch the swaps on a plane — close it, the last algorithm is still there.
+- `alphatab` — **alphaTab** · Creativity, Media · v1.0.0. The tab lives in the GIF. Invite, and a friend follows the playhead.
+- `anyroad` — **Anyroad** · Games · v1.0.0. Drive any road on Earth, built from live map data.
+- `asteroids` — **Asteroids** · Games · v1.0.0. Asteroids with friends — everyone who opens your invite flies another ship.
+- `backdooms` — **Backdooms** · Games · v1.2. DOOM in the Backrooms, running inside a single GIF file.
+- `backgammon` — **Backgammon** · Games · v1.0. Play the computer, or send a link and a friend sits across the board.
+- `background-removal` — **Background Removal** · Creativity, Media · v1.0.0. Cut a photo's background on your device. No upload, no account, no watermark.
+- `battle-city` — **Eagle Defense** · Games · v1.1.0. Tanks, bricks, and the eagle. A friend on the other pad.
+- `battleboat` — **Battleboat** · Games · v1.0. Hide a fleet on your phone, send the link, sink theirs.
+- `beepbox` — **BeepBox** · Creativity, Media · v4.2.2. The chiptune song lives in the GIF. Invite, and you jam the same track.
+- `besogo` — **BesoGo** · Games · v1.0. A Go board. Two seats. Tap to place a stone.
+- `bible` — **Bible** · Learning · v1.2.0. 139 public-domain Bibles, offline from the first verse. No account.
+- `bingo` — **Bingo** · Games · v1.1.0. Call bingo over a meeting. Everyone who opens the invite gets a card.
+- `bip39` — **BIP39** · Utilities · v1.0. Recovery words stay on this device — nothing is sent anywhere.
+- `bitsy` — **Bitsy** · Games, Creativity · v1.0. A tiny world. Walk around. Make one. Share it.
+- `blackjack` — **Blackjack** · Games · v1.1.0. Beat the dealer to 21. Friends who open your invite play their own hands.
+- `blockly-games` — **Blockly Games** · Games, Learning · v1.0.0. Puzzle, Maze, Turtle — offline, your stars live in the file, an invite opens the same level.
+- `bowling` — **Bowling** · Games · v1.0.0. Ten pins at the end of the lane. Aim, flick, take turns.
+- `breaklock` — **BreakLock** · Games · v1.0.0. You draw the secret. They have to crack it. Your streak lives in the file.
+- `breakout` — **Breakout** · Games · v1.0.0. High score lives in the file. Invite a friend: two paddles, one wall.
+- `carbon` — **Carbon** · Developer, Creativity · v1.0.0. Pretty code images, no account — the snippet lives in this file.
+- `cascade-studio` — **CascadeStudio** · Utilities, Creativity · v1.0.0. Sketch a profile, pull it into a solid. The model lives in the file — works offline.
+- `catch-the-cat` — **Catch the Cat** · Games · v1.2.0. Tap the dots. Wall the cat in — alone, against a friend, or together.
+- `checkers` — **Checkers** · Games · v1.0. Play the computer, or send a link and a friend takes the other colour.
+- `chess-grandmaster` — **Chess Grandmaster** · Games, Learning · v1.0.1. The real Stockfish engine, running on your device — no internet needed.
+- `chrome-dino` — **Chrome Dino** · Games · v1.0.0. chrome://dino, always offline — high score in the file, Invite is a side-by-side run.
+- `civiclock` — **Civiclock** · Games · v1.0.0. Paint a little city and watch it grow month by month. Invite a co-mayor.
+- `coil` — **Coil** · Games · v1.1.0. Loop a trail around the orbs. Your best score is saved.
+- `connect-four` — **Connect Four** · Games · v1.0. Play the computer, or send a link and a friend drops the other colour.
+- `contrast-ratio` — **Contrast Ratio** · Utilities · v1.0. Pick two colours, see the contrast ratio and the WCAG verdict.
+- `cron-speak` — **Cron Speak** · Developer, Utilities · v1.1.0. Paste a cron expression, read it back in plain English.
+- `crossword` — **Crossword** · Games · v1.1.0. A crossword that saves itself. Close it mid-puzzle — the letters stay.
+- `css-doodle` — **CSS Doodle** · Creativity · v1.0.0. A little pattern toy. Remix a snippet. Share it with a friend.
+- `cube-composer` — **Cube Composer** · Games, Learning · v1.0. Stack and transform the cubes. Race a friend on the same puzzles.
+- `cyberchef` — **CyberChef** · Utilities, Developer · v11.4.0. Encode, decode, encrypt, hash, compress — hundreds of operations, all on this device.
+- `delta` — **Delta** · Games · v1.1.0. A C64-style shmup. Your best score is saved.
+- `digitaljs` — **DigitalJS** · Learning, Developer · v0.14.2. The circuit lives in the GIF. Invite shares the bench. It works on a plane.
+- `drawnix` — **Drawnix** · Creativity, Productivity · v0.4.0. Freehand, mind maps and flowcharts on one infinite canvas — saved on this device.
+- `drawphone` — **Drawphone** · Games · v1.0. Telephone with pictures: draw, pass, guess. One link deals everyone in.
+- `duck-hunt` — **Pond Hunt** · Games · v1.2. Click the ducks. The dog laughs.
+- `emoji-minesweeper` — **Emoji Minesweeper** · Games · v1.0. Minesweeper with emoji. Race a friend on the same board.
+- `epub-reader` — **EPUB Reader** · Utilities · v1.0.0. The book lives in the app. Invite a friend onto the same page — nothing is uploaded.
+- `evolution-of-trust` — **The Evolution of Trust** · Games, Learning · v1.0.0. Close it mid-essay and you are still on that chapter. Send the invite and a friend watches the same tournament.
+- `excalidraw` — **Excalidraw** · Creativity, Productivity · v0.18.1. The hand-drawn whiteboard. Drawings save into the app's own file.
+- `falling-blocks` — **Falling Blocks** · Games · v1.0.0. Race a friend: same falling shapes, two boards, first to top out loses.
+- `fend` — **fend** · Utilities · v1.1. A calculator that speaks units: type 1 ft to cm, get the answer.
+- `ffmpeg-studio` — **ffmpeg.wasm Studio** · Media, Utilities · v1.0.0. Trim, MP3, GIF — ffmpeg one-liners on this device. Nothing is uploaded.
+- `fieldplay` — **Field Play** · Creativity · v1.0.0. A plane of arrows. Pour particles with a finger and watch them flow.
+- `finance` — **Financial Tracker** · Productivity, Utilities · v1.0. Every account you have, in one place, on your own computer.
+- `finger-pool` — **Finger Pool** · Games · v1.0.0. Flick a ball with your finger. Colours fly into the pockets. Take turns.
+- `flexbox-froggy` — **Flexbox Froggy** · Games, Learning · v1.0.0. Write CSS. The frogs hop. Close it, come back still on the same pad — or invite a friend into this pond.
+- `floppy-bird` — **Floppy Bird** · Games · v1.0. Flappy Bird, plus a race mode — a friend flies beside you from one link.
+- `fluence` — **Fluence** · Learning, Productivity · v1.0.0. Speak off the cuff, get honest coaching on how you actually spoke.
+- `fluid` — **Fluid** · Creativity · v1.1. Drag a finger through ink and watch it swirl.
+- `fortune-sheet` — **Fortune Sheet** · Productivity · v1.0. An Excel-like spreadsheet. Your workbook is saved on your device, not a cloud.
+- `fps-simple` — **FPS Simple** · Games · v0.9.1. A sunlit market street, a rifle, and whoever you send the link to.
+- `gltf-viewer` — **glTF Viewer** · Utilities, Developer · v1.1.0. Open a 3D model. Orbit it, inspect the scene.
+- `gomoku` — **Gomoku** · Games · v1.0. Five in a row. Play the computer, or a friend from one invite.
+- `grid-garden` — **Grid Garden** · Games, Learning · v1.0.0. Write CSS grid, grow carrots — offline, and one invite shares the garden.
+- `guitar-bro` — **Guitar Bro** · Learning, Games · v1.0. Notes fall down the neck. Play them on your guitar, or tap the fret.
+- `hangman` — **Hangman** · Games · v1.0.0. Hangman for two: race a friend, or share the rope on one phone.
+- `hanzi-writer` — **Hanzi Writer** · Learning · v1.0.0. Trace the stroke order. Close it — your progress is still in the file. One invite, the same character.
+- `hat-sh` — **hat.sh** · Utilities · v1.0. Encrypt and decrypt files in this tab. Nothing leaves this device.
+- `hex-chess` — **Hex Chess** · Games · v1.0. Chess on hexagons, with three bishops. Play the computer or a friend.
+- `hexahedral` — **Hexahedral** · Games · v1.1. Drag the green cube through thirty puzzle levels.
+- `hexgl` — **HexGL** · Games · v1.0.0. The original futuristic racer, offline — your best lap lives in the GIF, and Invite is a ghost race.
+- `hextris` — **Hextris** · Games · v1.0.0. Race a friend from the same falling hexes — your high score lives in the GIF.
+- `hydra` — **Hydra** · Creativity · v1.0.0. The patch lives in the GIF. Invite jams the same synth — no account, no server.
+- `invaderz` — **InvaderZ** · Games · v1.0.0. Space Invaders where every friend who joins gets another cannon.
+- `io-808` — **iO-808** · Creativity, Media · v1.0.0. A silver 808 on the table. Tap the steps. Share a beat.
+- `io-blobs` — **IO Blobs** · Games · v1.1. An agar-style arena. Everyone who opens your link swims in it with you.
+- `isocity` — **IsoCity** · Games · v1.1. Build an isometric city, and invite a friend to build on the same map.
+- `jpg-glitch` — **JPG Glitch** · Creativity · v1.1. Glitch a photo on your device and save the result.
+- `js-gauntlet` — **Dungeon Party** · Games · v1.0.1. Gauntlet: four classes, one dungeon, friends join from one invite.
+- `jsnes` — **jsnes** · Games · v1.0.0. The ROM and the save live in this file. Invite is player two.
+- `json-crack` — **JSON Crack** · Developer, Utilities · v1.0. Paste JSON, see it as a graph. Your data stays on your device.
+- `json-diff` — **JSON Diff** · Developer · v1.1. Paste two JSON documents, see exactly what changed.
+- `json-editor` — **JSON Editor** · Developer, Utilities · v1.1. Edit JSON as a tree or as code, side by side.
+- `jspaint` — **JS Paint** · Creativity · v1.1.0. Classic MS Paint, faithfully remade.
+- `jungle` — **Jungle** · Games · v1.0. Jungle chess. Play the computer, or a friend from one link.
+- `jupyterlite` — **JupyterLite** · Developer, Learning · v1.0.0. A Python notebook that lives in this file. Invite shares the cells.
+- `kana-quiz` — **Kana Quiz** · Learning · v1.0.0. Learn hiragana and katakana. Quiz yourself, or race a friend.
+- `keeweb` — **KeeWeb** · Utilities · v1.0. A KeePass vault on this device. Copy a password; it does not fill other sites.
+- `koil` — **Koil** · Games · v1.0.0. A mint-green corridor, a handful of keys, and whoever walks in with you.
+- `learn-git-branching` — **Learn Git Branching** · Learning, Developer · v1.0.0. The git trainer that lives in a GIF — close it, come back, still on the same commit.
+- `longwave` — **Longwave** · Games · v1.1. One of you is the psychic. Read their clue, find the mark on the dial.
+- `lost-in-cyberspace` — **Lost in Cyberspace** · Games · v1.1. One of you is lost in the network; the other reads the codes. Talk fast.
+- `lrc-maker` — **LRC Maker** · Creativity · v1.1.0. Tap lyric timings along to a song, export the LRC file.
+- `ludo` — **Ludo** · Games · v1.1. Ludo. Four seats fill as friends open your invite.
+- `math-race` — **Math Race** · Games, Learning · v1.0.0. Same equation on every phone — first correct answer scores.
+- `matter-sandbox` — **Matter Sandbox** · Creativity, Games · v1.0.0. A 2D physics toy box. The pile lives in the GIF; one invite is the same room.
+- `meeting-bot` — **Meeting Bot** · Utilities · v0.9.23. A meeting bot you drive from another device.
+- `memory` — **Memory** · Games · v1.1.0. Watch the pads light up, tap them back. Each round adds one more.
+- `mermaid` — **Mermaid** · Productivity · v1.0.0. Type a Mermaid diagram, see it render live.
+- `metronome` — **Metronome** · Creativity, Media · v1.1. A metronome. Set the tempo, it keeps the click.
+- `milkdown` — **Milkdown** · Productivity, Utilities · v1.0.0. WYSIWYG markdown that lives in this file — Invite is the same document.
+- `mini-photo-editor` — **Mini Photo Editor** · Creativity · v1.1.0. Crop, rotate and filter a photo — right on your device.
+- `monaco-code` — **Monaco Code** · Developer, Utilities · v1.0.0. VS Code’s editor, in a file. One invite is a pair session.
+- `monkeytype` — **Monkeytype** · Learning · v1.0.0. The typing test, offline — personal bests live in the file, one invite is a live race.
+- `my-mind` — **My Mind** · Productivity · v1.1. Mind maps at typing speed: Tab for a child, Enter for a sibling.
+- `mykonos` — **Mykonos** · Games · v1.0.0. White houses, a blue dome, and a little island to walk.
+- `nonogram` — **Nonogram** · Games · v1.0.0. Picross. Paint the squares from the numbers. Race a friend on the same puzzle.
+- `nullboard` — **Nullboard** · Productivity · v1.0.0. The board is the file. One invite is the room — no Trello account.
+- `nxn-cube` — **NxN Cube** · Games · v1.0. A colourful cube. Drag a face to turn it. Race the same scramble.
+- `offline-bible-study` — **Bible Study** · Learning · v0.9.0. Read Henry, Calvin and the fathers, with scripture open beside them.
+- `offline-llm-bitnet` — **Offline Cheap Text LLM BitNet** · Utilities · v0.9. EXPERIMENTAL, and SLOW — minutes per answer, not seconds. Microsoft's BitNet, running entirely on your device.
+- `offline-llm-gemma` — **Offline Cheap Text LLM Gemma 3** · Utilities · v1.0. EXPERIMENTAL, and SLOW — minutes per answer, not seconds. Google's Gemma 3, running entirely on your device.
+- `offline-llm-gemma4` — **Offline Cheap Text LLM Gemma 4** · Utilities · v1.0. EXPERIMENTAL, and the SLOWEST of the three — many minutes per answer. Google's Gemma 4, entirely on your device.
+- `offline-stt-whisper` — **Offline Captions (Whisper)** · Utilities · v1.0. Captions and speech-to-text for every app, in 99 languages, entirely on your device.
+- `offline-tts` — **Offline Text to Speech** · Utilities · v1.0.3. Give your computer a voice — offline text-to-speech that serves every app, no key, no cloud.
+- `offline-tts-kokoro` — **Offline Neural TTS (Kokoro, GPU)** · Utilities · v1.0. A higher-quality natural voice for every app — faster on a graphics chip, no key, no cloud.
+- `offline-tts-neural` — **Offline Neural Text to Speech** · Utilities · v1.0. A natural-sounding voice for every app on your computer — offline, no key, no cloud.
+- `one-stroke` — **One Stroke** · Games, Creativity · v1.0. A drawing game: one stroke each, then watch the picture replay.
+- `onoff` — **OnOff** · Games · v1.1.0. Twenty-five puzzle rooms where flipping a switch flips the world.
+- `openjscad` — **OpenJSCAD** · Utilities, Developer · v1.0.0. Write JavaScript, get a 3D solid — the script lives in the file.
+- `orca` — **Orca** · Creativity, Media · v1.0. Type letters on a grid; they become a music sequencer.
+- `otpauth` — **OTP Auth** · Utilities · v1.0.0. Authenticator codes that live in this file. Works on a plane. Nothing is uploaded.
+- `pacman` — **Pellets** · Games · v1.2.0. Twelve mazes and a thumb pad. Your high score is saved.
+- `paint-board` — **Paint Board** · Creativity · v1.0. A freehand board with wild brushes. Draw together.
+- `parable-of-polygons` — **Parable of the Polygons** · Learning · v1.0.0. Nicky Case’s Schelling explorable, offline — last sliders stay, one invite shares the town.
+- `particle-life` — **Particle Life** · Creativity, Games · v1.0.0. Watch particles form little creatures. Share the jar with a friend.
+- `pdf-read-aloud` — **Read Aloud** · Utilities · v1.1.7. Read a PDF, pasted text, or an image of text aloud. The file stays on this device.
+- `pdf-reader` — **PDF Reader** · Utilities · v1.0.0. The PDF stays in the app. Invite a friend onto the same page — nothing is uploaded.
+- `pdf-tables` — **PDF Tables → Excel** · Utilities · v1.1. Turn a PDF's tables into an Excel workbook, without the PDF leaving your device.
+- `pdf-tables-ocr` — **Scanned PDF Tables → Excel** · Utilities · v1.0. Scanned or text, a PDF's tables come out as Excel — OCR runs on your device.
+- `periodic-table` — **Periodic Table** · Learning · v1.0. All 118 elements, and a quiz you can race a friend on.
+- `piano-trainer` — **Piano Trainer** · Learning · v1.1. Scales, chords, the circle of fifths, and a quiz to drill them.
+- `pickr` — **Pickr** · Utilities · v1.0. A color picker you can actually use. Copy the code.
+- `piskel` — **Piskel** · Creativity · v0.15.2. A pixel art and sprite editor that exports animated GIFs.
+- `pivot` — **Pivot** · Productivity, Utilities · v1.1. Drop in a CSV, drag fields, get a pivot table.
+- `pixel-paint` — **Pixel Paint** · Creativity · v1.0. A tiny 32×32 pixel canvas. Draw a sprite. Draw together.
+- `pixelit` — **Pixel It** · Creativity · v1.1. Turn a photo into pixel art, right on your device.
+- `polygon-shredder` — **Polygon Shredder** · Creativity · v1.0.0. Cubes shred into confetti. Twiddle the knobs, save the look.
+- `pong` — **Pong** · Games · v1.1.0. Pong across two phones. Send the link, first to nine.
+- `pool` — **Pool** · Games · v1.0.0. Pool across two phones. Red against yellow, then the black.
+- `primitive` — **Primitive** · Creativity · v1.0.0. Redraw a photo as triangles — on this device, saved in the file.
+- `q1k3` — **Q1K3** · Games · v1.0.1. Quake in 13 kB: a shotgun and two torch-lit halls.
+- `qr-code` — **QR Code** · Utilities · v1.1. Type a link or any text. A QR code appears.
+- `qr-scan` — **QR Scan** · Utilities · v1.1. Read a QR code from a photo.
+- `queens` — **Queens** · Games · v1.1. 768 tap puzzles. Close it, come back, you're still on the board.
+- `quiz-buzzer` — **Quiz Buzzer** · Games, Learning · v1.0. Send one link and every phone in the room becomes a buzzer.
+- `racer` — **Racer** · Games · v1.0.0. A sunset highway, a red car, and whoever you send the link to.
+- `radius-raid` — **Radius Raid** · Games · v1.0.0. A tiny ship, a swarm of enemies, and a friend on the other stick.
+- `rawgraphs` — **RAWGraphs** · Productivity, Utilities · v1.0.0. Paste a CSV, map columns onto a chart — the dataset lives in the GIF.
+- `regexper` — **Regexper** · Developer, Utilities · v1.0.0. Type a regular expression, see it as a railroad diagram.
+- `regexr` — **RegExr** · Developer, Learning · v1.0.0. The pattern and the test text live in this file — works on a plane, one Invite shares it.
+- `restfox` — **Restfox** · Developer, Utilities · v1.0.0. An HTTP client. Collections stay here. Requests leave when you send them.
+- `retirement` — **Retirement Calculator** · Productivity, Utilities · v1.0. Will your money last? Tested against every real retirement since 1871.
+- `reversi` — **Reversi** · Games · v1.0. Othello. The computer plays here, or a friend joins from one link.
+- `rockets` — **Rockets** · Games · v1.0. Catch stars in a dark sky. One link puts a friend in it with you.
+- `sandspiel` — **Sandspiel** · Creativity, Games · v1.1.0. Pour sand, water, fire and plants. Watch them react.
+- `server-survival` — **Server Survival** · Games, Learning · v1.0. You are the cloud architect. Packets are coming — survive the traffic.
+- `shapez` — **shapez.io** · Games · v1.0.0. The factory lives in the GIF. One invite, and a friend is on the same belts.
+- `signature-pad` — **Signature Pad** · Utilities · v1.0. Sign with a finger, save the picture. Your signature stays on your device.
+- `skifree` — **SkiFree** · Games · v1.0. SkiFree on a phone: tilt to steer, race a friend's ghost.
+- `slots` — **Slots** · Games · v1.1. Five fruit reels and a lever. Friends watch the same spin from one link.
+- `smartcrop` — **Smartcrop** · Creativity · v1.0.0. Content-aware crop on this device — faces stay in the frame.
+- `snake` — **Snake** · Games · v1.0.0. Two snakes on one grid. Send a friend the link.
+- `sokoban` — **Sokoban** · Games · v1.0. Push the boxes onto the spots. Race a friend on the same warehouse.
+- `solitaire` — **Solitaire** · Games · v1.1. Klondike with undo, sized for a phone. Close it mid-deal — it keeps.
+- `sound-it-out` — **Sound It Out** · Learning · v1.6.0. Any sentence they love, built up from its sounds — in your own voice.
+- `spider` — **Spider** · Games · v1.1. Spider solitaire with 1, 2 or 4 suits. Your deal is saved.
+- `splat` — **Splat** · Media, Creativity · v1.0.0. A small 3D scene you can walk around, packed whole into the app.
+- `spyfall` — **Spyfall** · Games · v1.0. One link deals everyone a role. One of you is the spy.
+- `sql-playground` — **SQL Playground** · Developer, Utilities · v1.0.0. A SQLite database that lives in this file. Invite shares it.
+- `squoosh` — **Squoosh** · Media, Utilities, Creativity · v1.0. Make images smaller, on this device. Nothing is uploaded.
+- `star-battle` — **Star Battle** · Games · v1.0.1. Friends who open your link fly extra ships in the same sky.
+- `stolen-sword` — **Stolen Sword** · Games · v1.0.0. One finger, a stolen blade, and a thief who will not stop running.
+- `super-sudoku` — **Super Sudoku** · Games · v1.0. A full sudoku. Race a friend on the same puzzle.
+- `svg-edit` — **SVG-Edit** · Creativity · v7.4.2. Draw SVG on this device — the file is the save, and one invite is a shared canvas.
+- `svgomg` — **SVGOMG** · Utilities · v1.0. Make SVG files smaller. Watch the bytes fall as you tune.
+- `tanks` — **Tanks** · Games · v1.1. Drive a tank. Friends who open your link drive the rest.
+- `tesseract` — **Tesseract OCR** · Utilities · v1.0. Point it at a photo or a page; the words come out. OCR runs on your device.
+- `texgen` — **TexGen** · Creativity · v1.1. Procedural textures, live — tweak the recipe, watch it redraw.
+- `the-house` — **The House** · Games · v1.1.0. You wake in a room you do not know. Find the way out.
+- `thinktank` — **Thinktank** · Games · v1.0. Destroy the other base — against the computer, or a friend from one link.
+- `thumb-sprint` — **Thumb Sprint** · Games · v1.0.0. Mash your thumb to sprint. A friend races the next lane from one link.
+- `tic-tac-toe` — **Tic-Tac-Toe** · Games · v1.0. The computer plays perfectly. Bring a friend if you want to win.
+- `tic80` — **TIC-80** · Games, Creativity · v1.1.2837. The cart lives in this GIF. Close it, the game is still in there. Invite, and they play the one you just made.
+- `tiddlywiki` — **TiddlyWiki** · Productivity · v5.4.1. The wiki is the GIF — close it, hand it over, or invite someone in.
+- `tiny-platformer` — **Tiny Platformer** · Games · v1.0.1. A yellow square, a brick cave, and a best run that is still there when you come back.
+- `tiny-yurts` — **Tiny Yurts** · Games · v1.1.0. Drag a path from the yurt to the farm. The file keeps your best.
+- `tip-creators` — **Tip GifOS Creators** · Utilities · v1.1. Like GifOS? Buy the people who make it a coffee.
+- `tosios` — **TOSIOS** · Games · v1.0. A top-down dungeon, a staff, and whoever you send the link to.
+- `tower-defense` — **Tower Defense** · Games · v1.0. Pick a tower, tap a square. Don't let them through.
+- `tower-game` — **Tower Game** · Games · v1.0. Tap to drop each floor. Race a friend to the tallest tower.
+- `trianglify-studio` — **Trianglify** · Creativity · v1.0.0. Low-poly triangle wallpapers. The seed lives in the file. One invite shares it.
+- `tuner` — **Tuner** · Learning · v1.1. Play a note; see the pitch. A chromatic tuner for any instrument.
+- `typing` — **Typing** · Learning · v1.0. Typing practice that keeps your history — and lets you race a friend.
+- `ui-gradients` — **uiGradients** · Creativity · v1.0.0. Beautiful colour gradients. Browse, copy the CSS, keep favourites.
+- `underrun` — **Underrun** · Games · v1.0.0. Underrun: the corridor shooter, complete in one GIF.
+- `v86` — **v86** · Utilities · v1.0.0. A PC inside a GIF — FreeDOS boots offline, and the floppy is the save.
+- `vintage-poker` — **Vintage Poker** · Games · v1.1. Texas Hold'em with friends. Everyone who opens your link takes a seat.
+- `vocal-remover` — **Vocal Remover** · Media, Creativity · v1.0. Pull the singing out of a song, on your own device. Slowly, and for nothing.
+- `waveforms` — **Waveforms** · Learning, Creativity · v1.1. Hear sine, square, and saw. An explorable that fits a phone.
+- `webamp` — **Webamp** · Media, Creativity · v1.0.0. Winamp 2.9 that lives in a GIF — playlist, EQ, and your MP3s stay in the file, even on a plane.
+- `wifi-card` — **WiFi Card** · Utilities · v1.0. Print a little card with your WiFi name, password and a QR code.
+- `word-master` — **Word Master** · Games · v1.0.0. Six guesses, as many words as you like. Race a friend on the same secret.
+- `worldview` — **Worldview** · Learning, Utilities, Media · v1.0.0. NASA's satellite pictures of the whole Earth, every day since 2000 — most of them hours old.
+- `yahtzee` — **Yahtzee** · Games · v1.0. Yahtzee over a meeting — everyone sees the same dice.
+- `yoinks` — **yoinks** · Media, Utilities · v0.3.1. yoink any video. paste. yoink. done. YouTube, X, Instagram, TikTok and twenty more sites.
+- `yopass` — **Yopass** · Utilities · v1.0. Share a secret face to face: it goes device to device, not a server.
